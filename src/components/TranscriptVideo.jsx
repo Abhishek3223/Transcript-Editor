@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useRef } from "react";
 const TranscriptVideo = ({
   transcript,
   currentTime,
@@ -7,8 +9,17 @@ const TranscriptVideo = ({
   onEditChange,
   onEditSubmit,
 }) => {
+  // const renderCount = useRef(0);
+
+  // useEffect(() => {
+  //   // Increment render count
+  //   renderCount.current += 1;
+  //   console.log(`TranscriptVideo render count: ${renderCount.current}`);
+  // });
+
+
   return (
-    <div className="text-white font-semibold gap-[2px] flex flex-wrap">
+    <div className="text-white gap-[2px] flex flex-wrap">
       {transcript.map(({ word, start_time, duration }, index) => {
         const isActive =
           currentTime >= start_time && currentTime <= start_time + duration;

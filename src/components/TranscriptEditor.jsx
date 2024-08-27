@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import TranscriptVideo from "./TranscriptVideo";
 import { FaPlay, FaPause } from "react-icons/fa"; // Import icons
 import { initialTranscript } from "../utils/initialTranscript";
@@ -11,10 +11,13 @@ const TranscriptEditor = () => {
   const [editText, setEditText] = useState("");
 
   // Handle playback
-  const maxTime =
-    initialTranscript[initialTranscript.length - 1].start_time +
-    initialTranscript[initialTranscript.length - 1].duration +
-    100;
+  const maxTime = useMemo(() => {
+    return (
+      initialTranscript[initialTranscript.length - 1].start_time +
+      initialTranscript[initialTranscript.length - 1].duration +
+      100
+    );
+  }, [initialTranscript]);
   useEffect(() => {
     let interval = null;
 
@@ -42,9 +45,14 @@ const TranscriptEditor = () => {
   };
 
   const handleEditSubmit = (index) => {
-    const newTranscript = [...transcript];
-    newTranscript[index].word = editText;
-    setTranscript(newTranscript);
+    if (editText.length > 0) {
+      const newTranscript = [...transcript];
+      newTranscript[index].word = editText;
+      setTranscript(newTranscript);
+    }
+    else{
+        alert('Please enter a valid word');
+    }
     setEditWord(null);
   };
 
