@@ -57,16 +57,16 @@ const TranscriptEditor = () => {
   };
 
   return (
-    <div className="App max-w-2xl mx-auto  p-2 bg-gray-700 rounded-lg text-white shadow-lg">
-      <div className="relative bg-gray-800 p-2 rounded-lg shadow-md">
+    <div className="App max-w-2xl mx-auto  p-2 bg-[#2e3033] rounded-lg text-white shadow-lg">
+      <div className="relative bg-[#2e3033]  p-2 rounded-lg shadow-md">
         <div className="flex items-center  py-3 px-1 ">
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="flex items-center bg-gray-600 m-1 mr-2 px-2 py-1 rounded-sm text-white font-semibold shadow "
+            className="flex items-center bg-[#77797a52] m-1 mr-2 px-2 py-2 rounded-md text-white font-semibold shadow "
           >
-            {isPlaying ? <FaPause size={10} /> : <FaPlay size={10} />}
+            {isPlaying ? <FaPause size={12} /> : <FaPlay size={12} />}
           </button>
-          <span className="text-sm font-semibold">
+          <span className="text-sm rounded-md bg-[#77797a52] px-2 py-1 font-semibold">
             {`${(currentTime / 1000).toFixed(1)}s`}
           </span>
         </div>

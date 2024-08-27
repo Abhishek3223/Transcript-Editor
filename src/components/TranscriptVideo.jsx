@@ -17,7 +17,6 @@ const TranscriptVideo = ({
   //   console.log(`TranscriptVideo render count: ${renderCount.current}`);
   // });
 
-
   return (
     <div className="text-white gap-[2px] flex flex-wrap">
       {transcript.map(({ word, start_time, duration }, index) => {
@@ -36,25 +35,26 @@ const TranscriptVideo = ({
               {word}
             </span>
             {isSelected && (
-              <div className="absolute z-10 flex items-center w-[200px] justify-between flex-col top-full mt-2 left-0 bg-gray-800 p-2 rounded-lg shadow-lg border border-gray-700">
+              <div className="absolute z-20 flex flex-col w-64 top-full mt-2 left-0 bg-gray-800 p-3 rounded-lg shadow-md border border-gray-700">
                 <input
                   type="text"
                   value={editText}
                   onChange={onEditChange}
-                  className="w-full px-3 py-1 bg-gray-900 text-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition ease-in-out duration-150"
+                  className="w-full px-3 py-1 bg-gray-900 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition ease-in-out duration-150 text-sm"
+                  placeholder="Edit word"
                 />
-                <div className="flex flex-row w-full items-right border-1 justify-end mt-2 space-x-2">
+                <div className="flex justify-end mt-3 space-x-1">
                   <button
                     onClick={() => {
                       // Define this function later
                     }}
-                    className="bg-gray-600 text-white text-sm px-3 py-1 rounded-md hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 transition ease-in-out duration-150"
+                    className="bg-gray-600 text-white text-xs px-3 py-1 rounded-md hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 transition ease-in-out duration-150"
                   >
                     Correct All
                   </button>
                   <button
                     onClick={() => onEditSubmit(index)} // Save action
-                    className="bg-yellow-500 text-white text-sm px-3 py-1 rounded-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition ease-in-out duration-150"
+                    className="bg-yellow-500 text-white text-xs px-3 py-1 rounded-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition ease-in-out duration-150"
                   >
                     Correct
                   </button>
