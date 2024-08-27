@@ -49,7 +49,7 @@ const TranscriptEditor = () => {
   };
 
   return (
-    <div className="App max-w-2xl mx-auto my-6 p-2 bg-gray-700 rounded-lg text-white shadow-lg">
+    <div className="App max-w-2xl mx-auto  p-2 bg-gray-700 rounded-lg text-white shadow-lg">
       <div className="relative bg-gray-800 p-2 rounded-lg shadow-md">
         <div className="flex items-center  py-3 px-1 ">
           <button
