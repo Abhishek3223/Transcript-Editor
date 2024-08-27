@@ -8,7 +8,7 @@ const TranscriptVideo = ({
   onEditSubmit,
 }) => {
   return (
-    <div className="text-white font-bold gap-[2px] flex flex-wrap">
+    <div className="text-white font-semibold gap-[2px] flex flex-wrap">
       {transcript.map(({ word, start_time, duration }, index) => {
         const isActive =
           currentTime >= start_time && currentTime <= start_time + duration;
